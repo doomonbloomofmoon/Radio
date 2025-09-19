@@ -43,35 +43,6 @@
       margin-top: 20px;
     }
 
-    input[type="text"] {
-      margin-top: 20px;
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-
-    input[type="text"]::placeholder {
-      color: #aaa;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      border-radius: 6px;
-      border: none;
-      background-color: #ff5500;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #ff7733;
-    }
-
     /* Адаптивность для мобильных */
     @media (max-width: 400px) {
       .container {
@@ -80,9 +51,6 @@
       h1 {
         font-size: 1.5rem;
       }
-      button, input[type="text"] {
-        font-size: 0.9rem;
-      }
     }
   </style>
 </head>
@@ -90,26 +58,10 @@
   <div class="container">
     <h1>Интернет-радио</h1>
     <p>Слушайте поток онлайн!</p>
-    <audio id="radioPlayer" controls>
-      <source src="" type="audio/mpeg">
+    <audio id="radioPlayer" controls autoplay>
+      <source src="https://64f2d1f0858ff0aa1d8971391ed6871d.serveo.net" type="audio/mpeg">
       Ваш браузер не поддерживает аудио.
     </audio>
-    <input type="text" id="streamURL" placeholder="Вставьте ссылку на поток сюда">
-    <button onclick="changeStream()">Подключить поток</button>
   </div>
-
-  <script>
-    function changeStream() {
-      const url = document.getElementById('streamURL').value;
-      const player = document.getElementById('radioPlayer');
-      if(url) {
-        player.src = url;
-        player.load();
-        player.play();
-      }
-    }
-  </script>
 </body>
 </html>
-
-
