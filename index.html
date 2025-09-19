@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Интернет-радио</title>
   <style>
     html, body {
       height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('background.jpg') repeat; /* повторяемая картинка */
+      background: url('background.jpg') repeat;
       background-position: top left;
-      background-size: auto;
+      background-size: 100px 100px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .container {
-      background-color: rgba(30, 30, 30, 0.85);
+      background-color: #1e1e1e;
       padding: 30px;
       border-radius: 12px;
       text-align: center;
@@ -25,11 +26,12 @@
       width: 90%;
       max-width: 500px;
       box-shadow: 0 0 20px rgba(0,0,0,0.7);
+      box-sizing: border-box;
     }
 
     h1 {
       margin-top: 0;
-      font-size: 28px;
+      font-size: 2rem;
     }
 
     audio {
@@ -43,7 +45,8 @@
       padding: 10px;
       border-radius: 6px;
       border: none;
-      font-size: 16px;
+      font-size: 1rem;
+      box-sizing: border-box;
     }
 
     input[type="text"]::placeholder {
@@ -57,12 +60,25 @@
       border: none;
       background-color: #ff5500;
       color: #fff;
-      font-size: 16px;
+      font-size: 1rem;
       cursor: pointer;
     }
 
     button:hover {
       background-color: #ff7733;
+    }
+
+    /* Адаптивность для мобильных */
+    @media (max-width: 400px) {
+      .container {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      button, input[type="text"] {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
